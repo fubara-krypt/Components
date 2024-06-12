@@ -1,21 +1,13 @@
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-/*    ALL NAVIGATION: menu btn, btn 2 states, icons for button     */
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+const toggleBtn = document.querySelector('.toggle_btn')
+const toggleBtnIcon = document.querySelector('.toggle_btn i')
+const dropDownMenu = document.querySelector('.dropdown_menu')
 
-/*-------------------------------------------------------------*/
-/*             jQuery .menu-toggle (CSS) btn onClick           */
-/*-------------------------------------------------------------*/
+toggleBtn.onclick = function () {
+    dropDownMenu.classList.toggle('open')
+    const isOpen = dropDownMenu.classList.contains('open')
 
-$('.menu-toggle').click(function() {
-
-    /*--------------------------------------------------------------*/
-    /*open-close Navigation menu btn, 500 milliseconds to drop-close*/
-    /*--------------------------------------------------------------*/
-    $('.site-nav').toggleClass('site-nav-open', 500);
-        
-    /*-------------------------------------------------------------*/
-    /* changes hamburger to red X for close button .open CSS       */
-    /*-------------------------------------------------------------*/
-    $(this).toggleClass('open');
-
-  })
+    toggleBtnIcon.classList = isOpen
+    ? 'fa-solid fa-xmark'
+    : 'fa-solid fa-bars'
+    
+}
